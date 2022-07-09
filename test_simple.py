@@ -130,9 +130,9 @@ def test_simple(args):
             # PREDICTION
             input_image = input_image.to(device)
             features = encoder(input_image)
-            outputs = depth_decoder(features)
-
-            disp = outputs[("disp", 0)]
+            outputs = depth_decoder(*features)
+            disp = outputs[0]
+            #disp = outputs[("disp", 0)]
             disp_resized = torch.nn.functional.interpolate(
                 disp, (original_height, original_width), mode="bilinear", align_corners=False)
 

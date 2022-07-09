@@ -47,9 +47,10 @@ class DepthDecoder(nn.Module):
         self.decoder = nn.ModuleList(list(self.convs.values()))
         self.sigmoid = nn.Sigmoid()
 
-    def forward(self, input_features):
-        self.outputs = {}
+    def forward(self, input0, input1, input2, input3, input4):
 
+        input_features = [input0, input1, input2, input3, input4]
+        self.outputs = {}
         # decoder
         x = input_features[-1]
         for i in range(4, -1, -1):
@@ -62,4 +63,9 @@ class DepthDecoder(nn.Module):
             if i in self.scales:
                 self.outputs[("disp", i)] = self.sigmoid(self.convs[("dispconv", i)](x))
 
-        return self.outputs
+        _values = []
+        for key in sorted(self.outputs.keys()):
+            print(f'[trace] current key: {key}')
+            _values.append(self.outputs[key])
+
+        return _values
