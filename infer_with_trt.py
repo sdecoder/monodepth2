@@ -90,7 +90,6 @@ def allocate_buffers_for_encoder(engine):
   bindings = []
   stream = cuda.Stream()
 
-
   binding_to_type = {}
   binding_to_type['input'] = np.float32
 
@@ -159,15 +158,10 @@ class TRTInference(object):
     # Load image into CPU
     # this part is for the encoder inference
     print(f'[trace] TensorRT inference for input image{image_path}')
-
-
     # Copy it into appropriate place into memory
     # (self.inputs was returned earlier by allocate_buffers())
-
     # When infering on single image, we measure inference
     # time to output it to the user
-
-
     # infer for the first engine
     batch_size = 1
 
@@ -224,7 +218,6 @@ class TRTInference(object):
     # This allocates memory for network inputs/outputs on both CPU and GPU
     print("[trace] decoder engine loaded")
     print("[trace] allocating buffers for TensorRT engine")
-
 
     self.bindings = []
     self.inputs = self.outputs

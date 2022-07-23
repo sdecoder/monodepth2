@@ -1,8 +1,8 @@
-__pycache__
-*.pyc
-*_disp.jpg
-*_disp.npy
-*.npz
-kitti_data
-models
+.gitignore
 .idea
+monodepth2/datasets/__pycache__
+__pycache__
+assets/test_image_disp.npy
+datasets/__pycache__/
+models
+networks/__pycache__/
