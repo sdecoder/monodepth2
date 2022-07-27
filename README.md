@@ -9,7 +9,7 @@ This is the reference PyTorch implementation for training and testing depth esti
 > [ICCV 2019 (arXiv pdf)](https://arxiv.org/abs/1806.01260)
 
 <p align="center">
-  <img src="assets/teaser.gif" alt="example input output gif" width="600" />
+  <img src="resources/teaser.gif" alt="example input output gif" width="600" />
 </p>
 
 This code is for non-commercial use; please see the [license file](LICENSE) for terms.
@@ -250,6 +250,20 @@ You can download our precomputed disparity predictions from the following links:
 | Mono              | 1024 x 320  | 914 MB          | [Download 🔗](https://storage.googleapis.com/niantic-lon-static/research/monodepth2/mono_1024x320_eigen.npy)          |
 | Stereo            | 1024 x 320  | 914 MB          | [Download 🔗](https://storage.googleapis.com/niantic-lon-static/research/monodepth2/stereo_1024x320_eigen.npy)        |
 | Mono + Stereo     | 1024 x 320  | 914 MB          | [Download 🔗](https://storage.googleapis.com/niantic-lon-static/research/monodepth2/mono%2Bstereo_1024x320_eigen.npy) |
+
+
+## TensorRT acceleration
+
+### Configuration
+* OS: Arch Linux x86_64
+* TensorRT: 8.4.1.5
+* CUDA: 11.7
+* CPU: 11th Gen Intel i9-11900F (16) @ 5.000GHz
+* GPU: NVIDIA Tesla M40
+* Memory: 7689MiB / 64177MiB
+
+### Performance evalution for INT8/FP16/TF32/FP32
+
 
 
 
